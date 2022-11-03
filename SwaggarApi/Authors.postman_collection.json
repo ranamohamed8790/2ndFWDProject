@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "9e8ffb99-0c16-4f66-b510-31d669d03362",
+		"name": "Authors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16201818"
+	},
+	"item": [
+		{
+			"name": "Get Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Cases for Status Code ",
+							"pm.test(\"status Code in the Response should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(200)",
+							"}",
+							");",
+							"pm.test(\"status Code should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(201)",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"OK\")",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"False\")",
+							"}",
+							");",
+							"",
+							"//--------------------------------------------------------------//",
+							"",
+							"//Test Cases for Object properties in the Response Body",
+							"",
+							"pm.test(\"Object properties in Response displayed successfully by the following keys(id, idBook, firstName, lastName)\", function () {",
+							"   pm.expect({id: 1, idBook: 2, firstName: 1, lastName: 2}).to.have.all.",
+							"   keys('id', 'idBook', 'firstName', 'lastName');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors/",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post  Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Cases for Status Code ",
+							"pm.test(\"Author is created successsfully and status Code is 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(200)",
+							"});",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"OK\")",
+							"});",
+							"pm.test(\"status Value should be = created\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"created\")",
+							"});",
+							"",
+							"",
+							"//TestCase for Response Body",
+							"",
+							"console.log(pm.response.json());",
+							"pm.test(\"firstName should  be Mandatory and error 400 of bad requet displayed\",function(){",
+							"  pm.expect(\"firstName\").to.equal(\"null\");",
+							"});",
+							"pm.test(\"lastname should  be Mandatory and error 400 of bad requet displayed\",function(){",
+							"  pm.expect(\"lastname\").to.equal(\"null\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1000,\n    \"idBook\": 1001,\n    \"firstName\": \"Tester 1000\",\n    \"lastName\": \"tester 1000\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Cases for Status Code ",
+							"pm.test(\"status Code should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(200)",
+							"}",
+							");",
+							"pm.test(\"status Code should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(201)",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"OK\")",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"False\")",
+							"}",
+							");",
+							"",
+							"",
+							"var idBook = idBook;",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Result of idBook matched successfully\", function () {",
+							"    pm.expect(jsonData.idBook).to.eql(jsonData.idBook);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors/authors/books/:idBook",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"authors",
+						"books",
+						":idBook"
+					],
+					"variable": [
+						{
+							"key": "idBook",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Cases for Status Code ",
+							"pm.test(\"status Code should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(200)",
+							"}",
+							");",
+							"pm.test(\"status Code should be = 200\",function(){",
+							"   pm.expect(pm.response.code).to.equal(201)",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"OK\")",
+							"}",
+							");",
+							"pm.test(\"status Value should be = OK\",function(){",
+							"  pm.expect(pm.response.status).to.equal(\"False\")",
+							"}",
+							");",
+							"",
+							"var idAuthor = idAuthor;",
+							"var jsonData = pm.response.json();",
+							"pm.test(\"Result of idAuthor matched successfully\", function () {",
+							"    pm.expect(jsonData.idAuthor).to.eql(jsonData.idAuthor);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors/:id",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// // Test Cases for Status Code ",
+							"// pm.test(\"status Code should be = 200\",function(){",
+							"//    pm.expect(pm.response.code).to.equal(200)",
+							"// }",
+							"// );",
+							"// pm.test(\"status Code should be = 200\",function(){",
+							"//    pm.expect(pm.response.code).to.equal(201)",
+							"// }",
+							"// );",
+							"// pm.test(\"status Value should be = OK\",function(){",
+							"//   pm.expect(pm.response.status).to.equal(\"OK\")",
+							"// }",
+							"// );",
+							"// pm.test(\"status Value should be = OK\",function(){",
+							"//   pm.expect(pm.response.status).to.equal(\"False\")",
+							"// }",
+							"// );",
+							"// // Test Cases for Response Time  ",
+							"",
+							"// pm.test(\"Response time is less than 1 seconds\", function () {",
+							"//     pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"// });",
+							"// pm.test(\"Response time equal 1 seconds \", function () {",
+							"//     pm.expect(pm.response.responseTime).to.be.equal(1000);",
+							"// });",
+							"",
+							"",
+							"// // Test Cases for Response Time   ",
+							"// console.log(pm.response.responseSize);",
+							"",
+							"// pm.test(\"Response size equal 2 byte \", function () {",
+							"//     pm.expect(pm.response.responseSize).to.be.equal(2);",
+							"// });",
+							"",
+							"",
+							"// pm.test(\"Response size not equal 2 byte \", function () {",
+							"//     pm.expect(pm.response.responseSize).to.be.not.equal(2);",
+							"// });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"idBook\": 1,\n  \"firstName\": \"edit name1\",\n  \"lastName\": \"edit name  1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors/:id",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Test Cases for Response Time  ",
+							"",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"pm.test(\"Response time equal 100ms \", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.equal(1000);",
+							"});",
+							"",
+							"// Test Cases for Response Size   ",
+							"console.log(pm.response.responseSize);",
+							"pm.test(\"Response size equal 0 byte \", function () {",
+							"    pm.expect(pm.response.responseSize).to.be.equal(0);",
+							"})",
+							"pm.test(\"Response size less than 0 byte \", function () {",
+							"    pm.expect(pm.response.responseSize).to.be.below(0);",
+							"});",
+							";",
+							"",
+							"// Test Case for Response Headers",
+							"console.log(pm.response.headers.get(\"Content-Type\"));",
+							"pm.test(\"check the content-type return application/jason \", function () {",
+							"    pm.expect(pm.response.headers.get(\"application/json; charset=utf-8; v=1.0\"));",
+							"});",
+							"",
+							"console.log(pm.response.headers.get(\"Server\"));",
+							"pm.test(\"check the Server return Kestrel \", function () {",
+							"    pm.expect(pm.response.headers.get(\"Server\")).to.equal(\"Kestrel\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "api-supported-versions",
+						"value": " 1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": " application/json; charset=utf-8; v=1.0 ",
+						"type": "text"
+					},
+					{
+						"key": "date",
+						"value": " Fri28 Oct 2022 13:06:04 GMT ",
+						"type": "text"
+					},
+					{
+						"key": "server",
+						"value": " Kestrel ",
+						"type": "text"
+					},
+					{
+						"key": "transfer-encoding",
+						"value": " chunked",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/api/v1/Authors/:id",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

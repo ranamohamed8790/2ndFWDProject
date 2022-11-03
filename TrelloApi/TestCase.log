@@ -1,0 +1,53 @@
+ API: POST //1/boards/?name=Board 88&key={{Apikey}}&token={{token}}
+ Test Case 1: Value of 'Closed' Key is False successfully
+ Expected Result: "closed" = "false"
+ Actual Result: "closed" = "false"
+ Status: Pass
+
+
+
+==============================================================================================================================================================================
+
+ API: GET /1/members/me?boards=open&key={{Apikey}}&token={{token}}
+ Test Case 1: Response Body Lenght above 1
+ Expected Result: above 1
+ Actual Result: above 1 
+ Status: Pass
+
+==============================================================================================================================================================================
+ 
+API: DELETE /1/boards/:idBoards?key={{Apikey}}&token={{token}}
+Test Case 1: status Code in the Response should be = 200
+Expected Result: 200
+Actual Result: 200
+Status: Pass
+
+==============================================================================================================================================================================
+
+API: POST /1/lists?name=List1&idBoard={{idBoard}}&key={{Apikey}}&token={{token}}
+Test Case 1: Body Contains the following Key id ,name and ID Board 
+Expected Result: id ,name and ID Board 
+Actual Result: id ,name and ID Board 
+Status: Pass
+
+
+Test Case 2: Value of 'Closed' Key is False successfully
+Expected Result: "closed" = "false"
+Actual Result: "closed" = "false"
+Status: Pass
+
+==============================================================================================================================================================================
+
+
+API: PUT /1/lists/:id/closed?key={{Apikey}}&token={{token}}&value=false
+Test Case 1: status Code in the Response should be = 200y 
+Expected Result: 200
+Actual Result: 200
+Status: Pass
+
+Test Case 2: Response Header have key 'Set-Cookie' and its value contain 'isEnterpriseAdmin%3Dfalse  
+Expected Result: Set-Cookie = isEnterpriseAdmin%3Dfalse
+ual Result: Set-Cookie = isEnterpriseAdmin%3Dfalse
+Status: Pass
+
+

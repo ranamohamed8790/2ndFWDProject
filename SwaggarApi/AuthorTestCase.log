@@ -1,0 +1,90 @@
+ API: GET /api/v1/Authors
+ Test Case 1: response should be 200 OK
+ Expected Result: 200 OK
+ Actual Result: 200 OK
+ Status: Pass
+
+ Test Case 2: Object properties in Response displayed successfully by the following keys(id, idBook, firstName, lastName)
+ Expected Result: (id, idBook, firstName, lastName)
+ Actual Result: (id, idBook, firstName, lastName)
+ Status: Pass
+
+==============================================================================================================================================================================
+
+ API: POST /api/v1/Authors
+ Test Case 1: Author is created successsfully and status Code is 200 OK
+ Expected Result: 200 OK
+ Actual Result: 200 OK
+ Status: Pass
+
+ Test Case 2: Author is created successsfully and status Code is 200 created
+ Expected Result: 200 created
+ Actual Result: 200 OK
+ Status: Fail
+ 
+ 
+==============================================================================================================================================================================
+ 
+API: GET /api/v1/Authors/authors/books/{idBook}
+Test Case 1: Result of idBook matched successfully 
+Expected Result: idBook=2
+Actual Result: idBook=2
+Status: Pass
+
+==============================================================================================================================================================================
+
+API: GET /api/v1/Authors/:id
+Test Case 1: Result of idAuthor matched successfully 
+Expected Result: idAuthor=2
+Actual Result: idAuthor=2
+Status: Pass
+
+==============================================================================================================================================================================
+
+
+API: PUT/api/v1/Authors/:id
+Test Case 1: LastName updated successfully  
+Expected Result: Firstname = Test 1
+Actual Result: Firstname = Test 1
+Status: Pass
+
+Test Case 2: LastName updated successfully  
+Expected Result: LastName = Test 1
+Actual Result: LastName = Test 1
+Status: Pass
+
+==============================================================================================================================================================================
+
+API: DElETE/api/v1/Authors/:id
+Test Case 1: Response time is less than 100 ms  
+Expected Result: < 100 ms
+Actual Result: < 100 ms
+Status: Pass
+
+Test Case 2: Response time is equal 100 ms  
+Expected Result: = 100 ms
+Actual Result: != 100 ms 
+Status: Fail
+
+Test Case 3: Response size equal 0 byte  
+Expected Result: = 0 byte
+Actual Result:= 0 byte
+Status: Pass
+
+Test Case 4: Response size != 0 byte  
+Expected Result: != 0 byte  
+Actual Result: = 0 byte
+Status: Fail
+
+Test Case 5: check the content-type return application/jason
+Expected Result: = application/jason
+Actual Result:= application/jason
+Status: Pass
+
+Test Case 6: check the Server return Kestrel
+Expected Result: Kestrel 
+Actual Result: Kestrel
+Status: Pass
+
+
+
